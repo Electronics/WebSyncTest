@@ -734,7 +734,10 @@
         startTime = (new Date).getTime();
         getAccurateTime();
         window.requestAnimationFrame(animationStep);
-        //TODO: add a re-occuring resync 
+        window.setInterval(function() {
+            console.log("Automatic resync");
+            resync();
+        },600000);
     }
 </script>
 </body>
