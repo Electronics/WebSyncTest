@@ -235,8 +235,8 @@
    <rect x="751.42" y="-888.33" width="21.167" height="42.333"/>
    <path d="m460.37-888.33v-31.75" style="fill:none;stroke-width:.52917;stroke:#000"/>
    <rect x="436.56" y="-962.42" width="164.04" height="31.75" id="resolutionBox"/>
-   <text x="456.91891" y="-940.96686" id="resolutionTextbox" style="fill:#000000;font-family:'CMU Serif';font-size:50.8px;letter-spacing:0px;line-height:1.25;stroke-width:.26458;word-spacing:0px" xml:space="preserve">
-       <tspan x="456.91891" y="-940.96686" id="resolution" style="fill:#ffffff;font-family:'Courier New';font-size:25.4px;stroke-width:.26458">1080p HD</tspan>
+   <text x="456.91891" y="-938.96686" id="resolutionTextbox" style="fill:#000000;font-family:'CMU Serif';font-size:50.8px;letter-spacing:0px;line-height:1.25;stroke-width:.26458;word-spacing:0px" xml:space="preserve">
+       <tspan x="456.91891" y="-938.96686" id="resolution" style="fill:#ffffff;font-family:'Courier New';font-size:25.4px;stroke-width:.26458">1080p HD</tspan>
    </text>
    <rect x="391.58" y="-592" width="254" height="31.75"/>
    <rect x="269.88" y="-719" width="513.29" height="84.667"/>
@@ -549,14 +549,14 @@
   <rect x="1558.4" y="365" width="199.77" height="319.62" style="fill-opacity:.90476"/>
   <path d="m960 240.5v70" style="fill:none;stroke-width:8;stroke:#f00" id="syncMarker"/>
   <circle cx="1661" cy="636.5" r="45" style="fill:#fff;stroke-width:8;stroke:#fff" id="syncBall"/>
-  <g transform="translate(-31.047 -10)">
-   <rect x="570" y="-214.5" width="840" height="60"/>
-   <text x="990.00262" y="-170.21991" style="fill:#000000;font-family:'CMU Serif';font-size:95.888px;letter-spacing:0px;line-height:1.25;stroke-width:.49941;text-align:center;text-anchor:middle;word-spacing:0px" xml:space="preserve">
-       <tspan id="time" x="990.00262" y="-170.21991" style="fill:#ffffff;font-family:'Courier New';font-size:47.944px;stroke-width:.49941;text-align:center;text-anchor:middle">00/00/00 00:00:00.000</tspan>
+  <g>
+   <rect x="560" y="-214.5" width="800" height="60"/>
+   <text x="50%" y="-170.21991" text-anchor="middle" xml:space="preserve">
+       <tspan id="time" style="fill:#ffffff;font-family:'Courier New';font-size:47.944px;stroke-width:.49941;text-align:center">00/00/00 00:00:00.000</tspan>
    </text
   </g>
-  <text x="50%" y="618" style="fill:#000000;font-family:'CMU Serif';font-size:95.888px;letter-spacing:0px;line-height:1.25;stroke-width:.49941;text-align:center;text-anchor:middle;word-spacing:0px" xml:space="preserve">
-      <tspan id="timer" x="53%" y="618" style="fill:#ffffff;font-family:'Courier New';font-size:47.944px;stroke-width:.49941;text-align:center;text-anchor:middle">00:00:00.000</tspan>
+  <text x="50%" y="610" text-anchor="middle" xml:space="preserve">
+      <tspan id="timer" style="fill:#ffffff;font-family:'Courier New';font-size:47.944px;stroke-width:.49941;text-align:center">00:00:00.000</tspan>
   </text>
  </g>
 </svg>
@@ -733,7 +733,7 @@
     window.onload = function() {
         startTime = (new Date).getTime();
         getAccurateTime();
-        window.requestAnimationFrame(animationStep);
+        // window.requestAnimationFrame(animationStep);
         window.setInterval(function() {
             console.log("Automatic resync");
             resync();
