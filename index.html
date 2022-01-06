@@ -632,7 +632,7 @@
         console.log("Requesting new time sync");
         var request = new XMLHttpRequest();
         request.onreadystatechange = readystatechangehandler;
-        request.open("POST", "http://sync.laurie.tech/index.php", true);
+        request.open("POST", "http://sync.laurie.tech/sync.php", true);
         request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         request.send("original=" + (new Date).getTime());
 
@@ -699,10 +699,11 @@
 
             let winWidth = window.innerWidth;
             let winHeight = window.innerHeight;
+            let fps = Math.round(1000 / Math.abs(timestamp - previousTimestamp));
             if (winWidth==="1920" && winHeight==="1080") {
-                resolution.text("1080p HD");
+                resolution.text("1080p HD"+" "+fps);
             } else {
-                resolution.text(winWidth+"x"+winHeight);
+                resolution.text(winWidth+"x"+winHeight+" "+fps);
             }
 
             let date = pad(today.getDate(),2) + "/" + pad(today.getMonth()+1,2) + "/" + today.getFullYear().toString().slice(-2);
@@ -732,6 +733,7 @@
 
     window.onload = function() {
         startTime = (new Date).getTime();
+        wideResolutionBox();
         getAccurateTime();
         window.requestAnimationFrame(animationStep);
         window.setInterval(function() {
